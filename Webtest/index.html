@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body style="padding: 0px; margin: 0px;">
+
+<script>
+
+	for (var i = 0; i < 100; i++) {
+
+		createBlock ().addStyle({fontsize:"12px",left:"200px",top:"100px", width:"128px", height:"128px"}).addImage("Logo.jpg");
+	}
+
+    function createBlock () {
+
+    	var block = {
+
+		    element: document.createElement("img"),
+
+		    addStyle : function(style) {
+		        Object.assign(this.element.style, style);
+				return this;
+		    },
+
+		    addImage : function(src) {
+		        this.element.src = src;
+				return this;
+		    }
+		};
+
+		document.body.appendChild(block.element);
+		return block;
+    }
+</script>
+
+</body>
+</html>
